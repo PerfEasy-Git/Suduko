@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "artboards": [
+    {
+      "name": "You Character",
+      "width": 400,
+      "height": 400,
+      "animations": [
+        {
+          "name": "idle",
+          "duration": 2000,
+          "keyframes": [
+            {
+              "time": 0,
+              "properties": {
+                "scale": [1.0, 1.0],
+                "rotation": 0
+              }
+            },
+            {
+              "time": 1000,
+              "properties": {
+                "scale": [1.05, 1.05],
+                "rotation": 0
+              }
+            },
+            {
+              "time": 2000,
+              "properties": {
+                "scale": [1.0, 1.0],
+                "rotation": 0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
