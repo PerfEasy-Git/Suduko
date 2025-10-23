@@ -1,4 +1,4 @@
-name: storydoku
+name: sudoku
 description: A story-driven Sudoku adventure game - Codebreakers Edition
 publish_to: 'none'
 version: 1.0.0+1
@@ -24,17 +24,17 @@ dependencies:
   intl: ^0.19.0
   uuid: ^4.2.1
   
-  # Voice & Animation
-  flutter_tts: ^3.8.5
-  animated_text_kit: ^4.2.2
-  lottie: ^3.1.2
+  # Voice & Animation (commented out for minimal build)
+  # flutter_tts: ^3.8.5
+  # animated_text_kit: ^4.2.2
+  # lottie: ^3.1.2
   
-  # External Character Support
-  rive: ^0.12.4
-  video_player: ^2.8.2
+  # External Character Support (commented out for minimal build)
+  # rive: ^0.12.4
+  # video_player: ^2.8.2
   
-  # Audio Support
-  audioplayers: ^5.2.1
+  # Audio Support (commented out for minimal build)
+  # audioplayers: ^5.2.1
 
 dev_dependencies:
   flutter_test:
@@ -46,8 +46,8 @@ flutter:
   
   assets:
     - assets/images/
-    - assets/audio/music/
-    - assets/audio/sfx/
-    - assets/characters/
-    - assets/live_action/
+    # - assets/audio/music/
+    # - assets/audio/sfx/
+    # - assets/characters/
+    # - assets/live_action/
 

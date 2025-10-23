@@ -1,0 +1,23 @@
+{
+    "name": "StoryDoku - Classic Sudoku",
+    "short_name": "StoryDoku",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#1a1a2e",
+    "theme_color": "#00FFFF",
+    "description": "A clean, fast Sudoku puzzle game with number counters",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

@@ -39,21 +39,48 @@ class NumberCounter extends StatelessWidget {
                 ),
           ),
           const SizedBox(height: 8),
-          Wrap(
-            spacing: 6,
-            runSpacing: 6,
-            children: List.generate(9, (index) {
-              final number = index + 1;
-              final count = _getNumberCount(number);
-              final needed = 9 - count;
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final availableWidth = constraints.maxWidth;
+              final itemWidth = 36.0;
+              final spacing = 6.0;
+              final itemsPerRow = ((availableWidth + spacing) / (itemWidth + spacing)).floor();
+              final actualItemsPerRow = itemsPerRow > 0 ? itemsPerRow : 3; // Fallback to 3
               
-              return _buildNumberBadge(
-                context,
-                number: number,
-                needed: needed,
-                isComplete: needed == 0,
+              return Column(
+                children: [
+                  // First row
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: List.generate(
+                      actualItemsPerRow,
+                      (index) => _buildNumberBadge(
+                        context,
+                        number: index + 1,
+                        needed: 9 - _getNumberCount(index + 1),
+                        isComplete: _getNumberCount(index + 1) == 9,
+                      ),
+                    ),
+                  ),
+                  if (9 > actualItemsPerRow) ...[
+                    const SizedBox(height: 6),
+                    // Second row
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: List.generate(
+                        9 - actualItemsPerRow,
+                        (index) => _buildNumberBadge(
+                          context,
+                          number: actualItemsPerRow + index + 1,
+                          needed: 9 - _getNumberCount(actualItemsPerRow + index + 1),
+                          isComplete: _getNumberCount(actualItemsPerRow + index + 1) == 9,
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
               );
-            }),
+            },
           ),
         ],
       ),
@@ -81,8 +108,8 @@ class NumberCounter extends StatelessWidget {
     }
 
     return Container(
-      width: 40,
-      height: 40,
+      width: 36,
+      height: 36,
       decoration: BoxDecoration(
         color: badgeColor,
         borderRadius: BorderRadius.circular(8),

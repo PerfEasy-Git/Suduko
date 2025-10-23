@@ -6,7 +6,6 @@ import '../../domain/entities/puzzle.dart';
 import '../widgets/sudoku_grid.dart';
 import '../widgets/number_pad.dart';
 import '../widgets/game_controls.dart';
-import '../widgets/number_counter.dart';
 
 class GameScreen extends StatefulWidget {
   final Difficulty difficulty;
@@ -252,17 +251,6 @@ class _GameScreenState extends State<GameScreen> {
               ),
             ),
             
-            // Number Counter
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: NumberCounter(
-                grid: currentGrid,
-                isValidPlacement: (row, col, value) => 
-                  widget.generator.isValidPlacement(currentGrid, row, col, value),
-              ),
-            ),
-            
-            const SizedBox(height: 16),
             
             // Sudoku Grid
             Expanded(
