@@ -6,6 +6,7 @@ import '../../../game/data/services/sudoku_generator.dart';
 import '../../../game/presentation/screens/game_screen.dart';
 import '../../../story/presentation/screens/live_action_story_screen.dart';
 import '../../../../shared/widgets/banner_ad_widget.dart';
+import '../../../../shared/widgets/perfeasy_logo.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -59,32 +60,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      // Perfeasy Logo (PE)
-                      Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [AppTheme.primarySaffron, AppTheme.accentEmerald],
-                          ),
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppTheme.primarySaffron.withOpacity(0.4),
-                              blurRadius: 12,
-                              spreadRadius: 2,
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: Text(
-                            'PE',
-                            style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
+                      // Perfeasy Logo
+                      const PerfeasyLogo(
+                        size: 60,
+                        showText: false,
                       ),
                       const SizedBox(height: 16),
                       

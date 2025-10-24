@@ -5,11 +5,13 @@ import '../../core/services/ad_service.dart';
 class BannerAdWidget extends StatefulWidget {
   final double height;
   final EdgeInsets margin;
+  final String? adUnitId; // Allow custom ad unit ID
   
   const BannerAdWidget({
     Key? key,
     this.height = 50,
     this.margin = EdgeInsets.zero,
+    this.adUnitId,
   }) : super(key: key);
 
   @override
@@ -28,7 +30,7 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
 
   void _loadBannerAd() {
     _bannerAd = BannerAd(
-      adUnitId: AdService.bannerAdUnitId,
+      adUnitId: widget.adUnitId ?? AdService.homeBannerAdUnitId,
       size: AdSize.banner,
       request: const AdRequest(),
       listener: BannerAdListener(
@@ -36,11 +38,17 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
           setState(() {
             _isLoaded = true;
           });
-          debugPrint('Banner ad loaded successfully');
+          debugPrint('✅ Banner ad loaded successfully');
+          debugPrint('🎯 Ad Unit ID: ${widget.adUnitId ?? AdService.homeBannerAdUnitId}');
+          debugPrint('📏 Ad Size: Banner (320x50)');
         },
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
-          debugPrint('Banner ad failed to load: $error');
+          debugPrint('❌ Banner ad failed to load: $error');
+          debugPrint('🎯 Ad Unit ID: ${widget.adUnitId ?? AdService.homeBannerAdUnitId}');
+          debugPrint('🔍 Error Code: ${error.code}');
+          debugPrint('📝 Error Message: ${error.message}');
+          debugPrint('🌐 Domain: ${error.domain}');
         },
         onAdOpened: (ad) {
           debugPrint('Banner ad opened');

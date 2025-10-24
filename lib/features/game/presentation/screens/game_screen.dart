@@ -8,6 +8,8 @@ import '../widgets/number_pad.dart';
 import '../widgets/game_controls.dart';
 import '../../../../shared/widgets/banner_ad_widget.dart';
 import '../../../../core/services/interstitial_ad_service.dart';
+import '../../../../core/services/ad_service.dart';
+import '../../../../shared/widgets/perfeasy_logo.dart';
 
 class GameScreen extends StatefulWidget {
   final Difficulty difficulty;
@@ -222,21 +224,32 @@ class _GameScreenState extends State<GameScreen> {
       appBar: AppBar(
         backgroundColor: AppTheme.backgroundWarmIvory,
         elevation: 0,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        title: Row(
           children: [
-            Text(
-              'Sudoku by Perfeasy Games',
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: AppTheme.primarySaffron,
-                fontWeight: FontWeight.bold,
-              ),
+            const PerfeasyLogo(
+              size: 32,
+              showText: false,
             ),
-            Text(
-              'Proudly Indian',
-              style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                color: AppTheme.primarySaffron,
-                fontWeight: FontWeight.w500,
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Sudoku by Perfeasy Games',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      color: AppTheme.primarySaffron,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    'Proudly Indian',
+                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                      color: AppTheme.primarySaffron,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -259,9 +272,10 @@ class _GameScreenState extends State<GameScreen> {
         child: Column(
           children: [
             // Top Banner Ad
-            const BannerAdWidget(
+            BannerAdWidget(
               height: 40,
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              adUnitId: AdService.gameTopBannerAdUnitId,
             ),
             
             // Stats bar
@@ -314,9 +328,10 @@ class _GameScreenState extends State<GameScreen> {
             ),
             
             // Bottom Banner Ad
-            const BannerAdWidget(
+            BannerAdWidget(
               height: 40,
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              adUnitId: AdService.gameBottomBannerAdUnitId,
             ),
           ],
         ),

@@ -13,7 +13,7 @@ class RewardedAdService {
     
     try {
       await RewardedAd.load(
-        adUnitId: AdService.rewardedAdUnitId,
+        adUnitId: AdService.hintRewardedAdUnitId,
         request: const AdRequest(),
         rewardedAdLoadCallback: RewardedAdLoadCallback(
           onAdLoaded: (ad) {

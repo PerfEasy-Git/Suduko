@@ -15,7 +15,7 @@ class InterstitialAdService {
     
     try {
       await InterstitialAd.load(
-        adUnitId: AdService.interstitialAdUnitId,
+        adUnitId: AdService.gameCompleteInterstitialAdUnitId,
         request: const AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (ad) {
