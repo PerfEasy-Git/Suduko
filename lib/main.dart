@@ -26,9 +26,9 @@ class StoryDokuApp extends StatelessWidget {
         Provider(create: (_) => SudokuGenerator()),
       ],
       child: MaterialApp(
-        title: 'StoryDoku: Code Breakers',
+        title: 'Sudoku by Perfeasy Games',
         debugShowCheckedModeBanner: false,
-        theme: AppTheme.darkTheme,
+        theme: AppTheme.lightTheme,
         home: const HomeScreen(),
       ),
     );

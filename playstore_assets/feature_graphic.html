@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feature Graphic - Sudoku by Perfeasy Games</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        
+        .feature-container {
+            width: 1024px;
+            height: 500px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #00ffff 20%);
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+        
+        .left-side {
+            width: 400px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sudoku-grid {
+            width: 300px;
+            height: 300px;
+            border: 3px solid #00ffff;
+            position: relative;
+        }
+        
+        .grid-cell {
+            position: absolute;
+            border: 1px solid #00ffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .grid-cell.thick-right {
+            border-right: 3px solid #00ffff;
+        }
+        
+        .grid-cell.thick-bottom {
+            border-bottom: 3px solid #00ffff;
+        }
+        
+        .right-side {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .main-title {
+            color: #00ffff;
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #00ff00;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .features {
+            color: #00ffff;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        .features ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .features li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="feature-container">
+        <div class="left-side">
+            <div class="sudoku-grid">
+                <!-- Sample Sudoku grid with some numbers -->
+                <div class="grid-cell thick-right thick-bottom" style="left: 0px; top: 0px; width: 99px; height: 99px;">5</div>
+                <div class="grid-cell thick-bottom" style="left: 100px; top: 0px; width: 99px; height: 99px;">3</div>
+                <div class="grid-cell thick-right thick-bottom" style="left: 200px; top: 0px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell thick-bottom" style="left: 300px; top: 0px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell thick-right thick-bottom" style="left: 400px; top: 0px; width: 99px; height: 99px;">7</div>
+                <div class="grid-cell thick-bottom" style="left: 500px; top: 0px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell thick-right thick-bottom" style="left: 600px; top: 0px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell thick-bottom" style="left: 700px; top: 0px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell thick-bottom" style="left: 800px; top: 0px; width: 99px; height: 99px;"></div>
+                
+                <div class="grid-cell thick-right" style="left: 0px; top: 100px; width: 99px; height: 99px;">6</div>
+                <div class="grid-cell" style="left: 100px; top: 100px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell thick-right" style="left: 200px; top: 100px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell" style="left: 300px; top: 100px; width: 99px; height: 99px;">1</div>
+                <div class="grid-cell thick-right" style="left: 400px; top: 100px; width: 99px; height: 99px;">9</div>
+                <div class="grid-cell" style="left: 500px; top: 100px; width: 99px; height: 99px;">5</div>
+                <div class="grid-cell thick-right" style="left: 600px; top: 100px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell" style="left: 700px; top: 100px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell" style="left: 800px; top: 100px; width: 99px; height: 99px;"></div>
+                
+                <div class="grid-cell thick-right" style="left: 0px; top: 200px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell" style="left: 100px; top: 200px; width: 99px; height: 99px;">9</div>
+                <div class="grid-cell thick-right" style="left: 200px; top: 200px; width: 99px; height: 99px;">8</div>
+                <div class="grid-cell" style="left: 300px; top: 200px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell thick-right" style="left: 400px; top: 200px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell" style="left: 500px; top: 200px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell thick-right" style="left: 600px; top: 200px; width: 99px; height: 99px;"></div>
+                <div class="grid-cell" style="left: 700px; top: 200px; width: 99px; height: 99px;">6</div>
+                <div class="grid-cell" style="left: 800px; top: 200px; width: 99px; height: 99px;"></div>
+            </div>
+        </div>
+        
+        <div class="right-side">
+            <div class="main-title">Sudoku by</div>
+            <div class="main-title">Perfeasy Games</div>
+            <div class="subtitle">Proudly Indian</div>
+            <div class="tagline">Master the grid. Challenge your mind.</div>
+            
+            <div class="features">
+                <ul>
+                    <li>Multiple difficulty levels</li>
+                    <li>Clean, intuitive interface</li>
+                    <li>Hint system for challenging puzzles</li>
+                    <li>Mistake tracking & undo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

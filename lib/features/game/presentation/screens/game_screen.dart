@@ -164,11 +164,11 @@ class _GameScreenState extends State<GameScreen> {
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
-        backgroundColor: AppTheme.surfaceDark,
+        backgroundColor: AppTheme.surfaceWhite,
         title: Text(
           'PUZZLE COMPLETE!',
           style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                color: AppTheme.accentGreen,
+                color: AppTheme.accentEmerald,
               ),
         ),
         content: Column(
@@ -216,10 +216,26 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppTheme.backgroundDark,
-        title: Text(
-          'STORYDOKU',
-          style: Theme.of(context).textTheme.displayMedium,
+        backgroundColor: AppTheme.backgroundWarmIvory,
+        elevation: 0,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Sudoku by Perfeasy Games',
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                color: AppTheme.primarySaffron,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Proudly Indian',
+              style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                color: AppTheme.primarySaffron,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
         ),
         actions: [
           Padding(
@@ -228,7 +244,7 @@ class _GameScreenState extends State<GameScreen> {
               child: Text(
                 widget.difficulty.displayName.toUpperCase(),
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      color: AppTheme.primaryCyan,
+                      color: AppTheme.secondaryNavy,
                     ),
               ),
             ),
@@ -245,8 +261,8 @@ class _GameScreenState extends State<GameScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   _buildStat('MISTAKES', mistakes.toString(), AppTheme.warningRed),
-                  _buildStat('HINTS', hintsUsed.toString(), AppTheme.primaryCyan),
-                  _buildStat('CLUES', puzzle.clueCount.toString(), AppTheme.accentGreen),
+                  _buildStat('HINTS', hintsUsed.toString(), AppTheme.primarySaffron),
+                  _buildStat('CLUES', puzzle.clueCount.toString(), AppTheme.accentEmerald),
                 ],
               ),
             ),

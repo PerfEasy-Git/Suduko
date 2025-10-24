@@ -21,8 +21,8 @@ class HomeScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              AppTheme.backgroundDark,
-              AppTheme.surfaceDark.withOpacity(0.5),
+              AppTheme.backgroundSaffronGradient,
+              AppTheme.backgroundWarmIvory,
             ],
           ),
         ),
@@ -34,25 +34,109 @@ class HomeScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 20),
                 
-                // App Logo/Title
-                Text(
-                  'STORYDOKU',
-                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                        fontSize: 36,
-                        color: AppTheme.primaryCyan,
+                // Header Background Strip
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        AppTheme.backgroundSaffronGradient,
+                        Colors.white,
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 10,
+                        spreadRadius: 2,
+                        offset: const Offset(0, 4),
                       ),
-                  textAlign: TextAlign.center,
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      // Perfeasy Logo (PE)
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [AppTheme.primarySaffron, AppTheme.accentEmerald],
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppTheme.primarySaffron.withOpacity(0.4),
+                              blurRadius: 12,
+                              spreadRadius: 2,
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            'PE',
+                            style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      
+                      // App Title with Hierarchy
+                      Text(
+                        'SUDOKU',
+                        style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                              fontSize: 36,
+                              color: AppTheme.primarySaffron,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 2,
+                            ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'by Perfeasy Games',
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              color: AppTheme.secondaryNavy,
+                              fontWeight: FontWeight.w500,
+                            ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Proudly Indian',
+                        style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                              color: AppTheme.accentEmerald,
+                              fontStyle: FontStyle.italic,
+                            ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
                 ),
                 
-                const SizedBox(height: 4),
-                
-                Text(
-                  'CODE BREAKERS',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        letterSpacing: 4,
-                        color: AppTheme.primaryPurple,
+                // Tricolor Line
+                const SizedBox(height: 16),
+                Center(
+                  child: Container(
+                    height: 3,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          AppTheme.tricolorSaffron,
+                          AppTheme.tricolorWhite,
+                          AppTheme.tricolorGreen,
+                        ],
                       ),
-                  textAlign: TextAlign.center,
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
                 ),
                 
                 const SizedBox(height: 30),
@@ -61,8 +145,8 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   'CHOOSE YOUR CHALLENGE',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: AppTheme.primaryCyan,
-                        letterSpacing: 2,
+                        color: AppTheme.secondaryNavy,
+                        letterSpacing: 1,
                       ),
                   textAlign: TextAlign.center,
                 ),
@@ -76,7 +160,7 @@ class HomeScreen extends StatelessWidget {
                     title: 'STORY MODE',
                     subtitle: 'Experience the Codebreakers saga',
                     icon: Icons.auto_stories,
-                    color: AppTheme.primaryPurple,
+                    color: AppTheme.primarySaffron,
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
@@ -93,22 +177,41 @@ class HomeScreen extends StatelessWidget {
                   title: 'CLASSIC SUDOKU',
                   subtitle: 'Pure Sudoku puzzles',
                   icon: Icons.grid_on,
-                  color: AppTheme.primaryCyan,
+                  color: AppTheme.primarySaffron,
                   onTap: () {
                     _showDifficultySelection(context);
                   },
                 ),
                 
-                // Footer
+                // Footer with Indian Pride
                 Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Text(
-                    'Master the grid. Challenge your mind.',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontStyle: FontStyle.italic,
-                          color: AppTheme.primaryCyan.withOpacity(0.6),
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Made with ❤️ in India by Perfeasy Games',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              fontStyle: FontStyle.italic,
+                              color: AppTheme.textGrey,
+                            ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 8),
+                      Container(
+                        height: 2,
+                        width: 80,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              AppTheme.tricolorSaffron,
+                              AppTheme.tricolorWhite,
+                              AppTheme.tricolorGreen,
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(1),
                         ),
-                    textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -122,7 +225,7 @@ class HomeScreen extends StatelessWidget {
   void _showDifficultySelection(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: AppTheme.surfaceDark,
+      backgroundColor: AppTheme.surfaceWhite,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
@@ -135,7 +238,7 @@ class HomeScreen extends StatelessWidget {
             Text(
               'SELECT DIFFICULTY',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    color: AppTheme.primaryCyan,
+                    color: AppTheme.primarySaffron,
                   ),
               textAlign: TextAlign.center,
             ),
@@ -163,7 +266,7 @@ class HomeScreen extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: AppTheme.surfaceDark,
+          color: AppTheme.surfaceWhite,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(color: color, width: 2),
           boxShadow: [
@@ -214,19 +317,35 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildDifficultyCard(BuildContext context, Difficulty difficulty) {
+    Color cardColor;
     Color borderColor;
+    IconData icon;
+    String description;
+    
     switch (difficulty) {
       case Difficulty.easy:
-        borderColor = AppTheme.accentGreen;
+        cardColor = AppTheme.easyBackground;
+        borderColor = AppTheme.easyGreen;
+        icon = Icons.check_circle_outline;
+        description = 'Perfect for beginners';
         break;
       case Difficulty.medium:
-        borderColor = AppTheme.primaryCyan;
+        cardColor = AppTheme.mediumBackground;
+        borderColor = AppTheme.mediumSaffron;
+        icon = Icons.star_outline;
+        description = 'Balanced challenge';
         break;
       case Difficulty.hard:
-        borderColor = AppTheme.primaryPurple;
+        cardColor = AppTheme.hardBackground;
+        borderColor = AppTheme.hardBlue;
+        icon = Icons.diamond_outlined;
+        description = 'For experienced players';
         break;
       case Difficulty.expert:
-        borderColor = AppTheme.warningRed;
+        cardColor = AppTheme.expertBackground;
+        borderColor = AppTheme.expertRed;
+        icon = Icons.emoji_events_outlined;
+        description = 'Master level difficulty';
         break;
     }
 
@@ -243,64 +362,87 @@ class HomeScreen extends StatelessWidget {
         );
       },
       child: Container(
-        padding: const EdgeInsets.all(12),
+        margin: const EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: AppTheme.surfaceDark,
+          color: cardColor,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: borderColor, width: 2),
+          border: Border.all(
+            color: borderColor.withOpacity(0.2),
+            width: 2,
+          ),
           boxShadow: [
             BoxShadow(
-              color: borderColor.withOpacity(0.3),
-              blurRadius: 15,
+              color: Colors.black.withOpacity(0.06),
+              blurRadius: 10,
               spreadRadius: 2,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
         child: Row(
           children: [
             Container(
-              width: 40,
-              height: 40,
+              width: 60,
+              height: 60,
               decoration: BoxDecoration(
-                color: borderColor.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: borderColor, width: 1.5),
+                color: borderColor.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(
+                  color: borderColor.withOpacity(0.3),
+                  width: 2,
+                ),
               ),
               child: Center(
-                child: Text(
-                  difficulty.name[0].toUpperCase(),
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: borderColor,
-                  ),
+                child: Icon(
+                  icon,
+                  color: borderColor,
+                  size: 28,
                 ),
               ),
             ),
-            const SizedBox(width: 12),
+            const SizedBox(width: 20),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    difficulty.displayName.toUpperCase(),
+                    difficulty.displayName,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           color: borderColor,
-                          letterSpacing: 1.5,
+                          fontWeight: FontWeight.bold,
                         ),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    difficulty.description,
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    description,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: AppTheme.textGrey,
+                        ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    '${difficulty.minClues}-${difficulty.maxClues} clues',
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: borderColor,
+                          fontWeight: FontWeight.w500,
+                          fontStyle: FontStyle.italic,
+                        ),
                   ),
                 ],
               ),
             ),
-            Icon(
-              Icons.arrow_forward_ios,
-              color: borderColor,
-              size: 20,
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: borderColor.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Icon(
+                Icons.arrow_forward_ios,
+                color: borderColor,
+                size: 16,
+              ),
             ),
           ],
         ),

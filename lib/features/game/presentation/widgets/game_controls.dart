@@ -31,7 +31,7 @@ class GameControls extends StatelessWidget {
             icon: Icons.lightbulb_outline,
             label: 'HINT',
             onTap: onHint,
-            color: AppTheme.accentGreen,
+            color: AppTheme.accentEmerald,
           ),
           _buildControlButton(
             context,
@@ -53,14 +53,14 @@ class GameControls extends StatelessWidget {
     Color? color,
   }) {
     final isEnabled = onTap != null;
-    final buttonColor = color ?? AppTheme.primaryCyan;
+    final buttonColor = color ?? AppTheme.primarySaffron;
     
     return GestureDetector(
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         decoration: BoxDecoration(
-          color: isEnabled ? AppTheme.surfaceDark : AppTheme.surfaceDark.withOpacity(0.3),
+          color: isEnabled ? AppTheme.surfaceWhite : AppTheme.surfaceLightGrey,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isEnabled ? buttonColor : AppTheme.gridLine,

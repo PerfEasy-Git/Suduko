@@ -31,14 +31,15 @@ class SudokuGrid extends StatelessWidget {
       width: gridSize,
       height: gridSize,
       decoration: BoxDecoration(
-        color: AppTheme.surfaceDark,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppTheme.primaryCyan, width: 2),
+        color: AppTheme.surfaceWhite,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppTheme.gridLine, width: 1),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.primaryCyan.withOpacity(0.3),
-            blurRadius: 15,
-            spreadRadius: 2,
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 8,
+            spreadRadius: 1,
+            offset: const Offset(0, 2),
           ),
         ],
       ),
@@ -79,13 +80,13 @@ class SudokuGrid extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: isSelected
-              ? AppTheme.primaryCyan.withOpacity(0.3)
+              ? AppTheme.primarySaffron.withOpacity(0.3)
               : isHighlighted
-                  ? AppTheme.primaryCyan.withOpacity(0.1)
+                  ? AppTheme.primarySaffron.withOpacity(0.1)
                   : Colors.transparent,
           border: Border.all(
             color: isSelected
-                ? AppTheme.primaryCyan
+                ? AppTheme.primarySaffron
                 : Colors.transparent,
             width: 2,
           ),
@@ -98,9 +99,9 @@ class SudokuGrid extends StatelessWidget {
                     fontSize: size * 0.5,
                     fontWeight: isFixed ? FontWeight.bold : FontWeight.normal,
                     color: isFixed
-                        ? Colors.white
+                        ? AppTheme.textDark
                         : isCorrect
-                            ? AppTheme.primaryCyan
+                            ? AppTheme.primarySaffron
                             : AppTheme.warningRed,
                   ),
                 )
@@ -122,7 +123,7 @@ class GridPainter extends CustomPainter {
     final thickPaint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.0
-      ..color = AppTheme.primaryCyan.withOpacity(0.5);
+      ..color = AppTheme.primarySaffron.withOpacity(0.5);
 
     final cellSize = size.width / 9;
 

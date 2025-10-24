@@ -2,78 +2,131 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // Codebreakers Color Palette
-  static const Color primaryCyan = Color(0xFF00F0FF);
-  static const Color primaryPurple = Color(0xFFB026FF);
-  static const Color backgroundDark = Color(0xFF0A0E1A);
-  static const Color accentGreen = Color(0xFF00FF41);
-  static const Color warningRed = Color(0xFFFF0040);
-  static const Color surfaceDark = Color(0xFF1A1A2E);
-  static const Color gridLine = Color(0xFF2A2A3E);
+  // Perfeasy Games Color Palette - Contrast Optimized
+  static const Color primarySaffron = Color(0xFFE67E22);      // Deeper, richer saffron
+  static const Color secondaryNavy = Color(0xFF2C3E50);       // Deep navy blue
+  static const Color accentEmerald = Color(0xFF27AE60);       // Deep emerald green
+  static const Color backgroundWarmIvory = Color(0xFFF9F7F1); // Warm ivory background
+  static const Color textDark = Color(0xFF1A1A1A);           // Premium dark text
+  static const Color textGrey = Color(0xFF7D7D7D);           // Subtext grey
+  static const Color surfaceWhite = Color(0xFFFFFFFF);        // Pure white cards
+  static const Color surfaceLightGrey = Color(0xFFF5F5F5);    // Soft grey cards
+  static const Color gridLine = Color(0xFFE5E7EB);            // Subtle grid lines
+  static const Color warningRed = Color(0xFFC0392B);         // Deep red
+  static const Color successGreen = Color(0xFF27AE60);       // Success green
   
-  static ThemeData get darkTheme {
+  // Tricolor Gradient Colors
+  static const Color tricolorSaffron = Color(0xFFF5B041);
+  static const Color tricolorWhite = Color(0xFFFFFFFF);
+  static const Color tricolorGreen = Color(0xFF2ECC71);
+  
+  // Enhanced Brand Colors
+  static const Color backgroundSaffronGradient = Color(0xFFFFF4E3);
+  static const Color surfaceGlass = Color(0x80FFFFFF);
+  
+  // Difficulty Level Colors (Contrast Optimized)
+  static const Color easyGreen = Color(0xFF27AE60);
+  static const Color easyBackground = Color(0xFFECFDF5);
+  static const Color mediumSaffron = Color(0xFFE67E22);
+  static const Color mediumBackground = Color(0xFFFFF9E6);
+  static const Color hardBlue = Color(0xFF2C3E50);
+  static const Color hardBackground = Color(0xFFEBF5FF);
+  static const Color expertRed = Color(0xFFC0392B);
+  static const Color expertBackground = Color(0xFFFDECEA);
+  
+  static ThemeData get lightTheme {
     return ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: primaryCyan,
-      scaffoldBackgroundColor: backgroundDark,
-      colorScheme: const ColorScheme.dark(
-        primary: primaryCyan,
-        secondary: primaryPurple,
-        surface: surfaceDark,
-        background: backgroundDark,
+      brightness: Brightness.light,
+      primaryColor: primarySaffron,
+      scaffoldBackgroundColor: backgroundWarmIvory,
+      colorScheme: const ColorScheme.light(
+        primary: primarySaffron,
+        secondary: secondaryNavy,
+        surface: surfaceWhite,
+        background: backgroundWarmIvory,
         error: warningRed,
+        onPrimary: Colors.white,
+        onSecondary: Colors.white,
+        onSurface: textDark,
+        onBackground: textDark,
       ),
       textTheme: TextTheme(
-        displayLarge: GoogleFonts.orbitron(
+        // Titles / Headings - Poppins SemiBold
+        displayLarge: GoogleFonts.poppins(
           fontSize: 32,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-          letterSpacing: 2,
+          fontWeight: FontWeight.w600,
+          color: secondaryNavy,
+          letterSpacing: -0.5,
         ),
-        displayMedium: GoogleFonts.orbitron(
+        displayMedium: GoogleFonts.poppins(
           fontSize: 24,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-          letterSpacing: 1.5,
+          fontWeight: FontWeight.w600,
+          color: secondaryNavy,
+          letterSpacing: -0.25,
         ),
-        titleLarge: GoogleFonts.rajdhani(
+        titleLarge: GoogleFonts.poppins(
           fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
+          fontWeight: FontWeight.w600,
+          color: secondaryNavy,
         ),
-        bodyLarge: GoogleFonts.rajdhani(
+        titleMedium: GoogleFonts.poppins(
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
+          color: primarySaffron,
+        ),
+        // Body / Descriptions - Nunito Sans
+        bodyLarge: GoogleFonts.nunitoSans(
           fontSize: 16,
-          color: Colors.white,
+          fontWeight: FontWeight.w400,
+          color: textDark,
         ),
-        bodyMedium: GoogleFonts.rajdhani(
+        bodyMedium: GoogleFonts.nunitoSans(
           fontSize: 14,
-          color: Colors.white70,
+          fontWeight: FontWeight.w400,
+          color: textGrey,
+        ),
+        bodySmall: GoogleFonts.nunitoSans(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          color: textGrey,
+        ),
+        // Numbers (Grid) - Roboto Mono
+        labelLarge: GoogleFonts.robotoMono(
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
+          color: textDark,
+        ),
+        // Accent Text - Montserrat Medium Italic
+        labelMedium: GoogleFonts.montserrat(
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          fontStyle: FontStyle.italic,
+          color: accentEmerald,
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: primaryCyan,
-          foregroundColor: backgroundDark,
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+          backgroundColor: primarySaffron,
+          foregroundColor: Colors.white,
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(12), // Pill shape
           ),
-          elevation: 8,
-          shadowColor: primaryCyan.withOpacity(0.5),
-          textStyle: GoogleFonts.rajdhani(
+          elevation: 2,
+          shadowColor: primarySaffron.withOpacity(0.3),
+          textStyle: GoogleFonts.poppins(
             fontSize: 16,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 0.5,
           ),
         ),
       ),
       cardTheme: CardTheme(
-        color: surfaceDark,
-        elevation: 8,
-        shadowColor: primaryCyan.withOpacity(0.3),
+        color: surfaceWhite,
+        elevation: 6,
+        shadowColor: Colors.black.withOpacity(0.06),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side: BorderSide(color: primaryCyan.withOpacity(0.3), width: 1),
         ),
       ),
     );

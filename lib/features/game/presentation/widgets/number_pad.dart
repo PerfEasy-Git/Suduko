@@ -32,16 +32,16 @@ class NumberPad extends StatelessWidget {
         width: 36,
         height: 48,
         decoration: BoxDecoration(
-          color: isEnabled ? AppTheme.surfaceDark : AppTheme.surfaceDark.withOpacity(0.3),
+          color: isEnabled ? AppTheme.surfaceWhite : AppTheme.surfaceLightGrey,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: isEnabled ? AppTheme.primaryCyan : AppTheme.gridLine,
+            color: isEnabled ? AppTheme.primarySaffron : AppTheme.gridLine,
             width: 1,
           ),
           boxShadow: isEnabled
               ? [
                   BoxShadow(
-                    color: AppTheme.primaryCyan.withOpacity(0.2),
+                    color: AppTheme.primarySaffron.withOpacity(0.2),
                     blurRadius: 8,
                     spreadRadius: 1,
                   ),
@@ -54,7 +54,7 @@ class NumberPad extends StatelessWidget {
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: isEnabled ? AppTheme.primaryCyan : AppTheme.gridLine,
+              color: isEnabled ? AppTheme.primarySaffron : AppTheme.gridLine,
             ),
           ),
         ),

@@ -290,12 +290,12 @@ class _LiveActionStoryScreenState extends State<LiveActionStoryScreen>
             child: Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppTheme.primaryCyan.withOpacity(0.2),
+                color: AppTheme.primarySaffron.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppTheme.primaryCyan, width: 1),
+                border: Border.all(color: AppTheme.primarySaffron, width: 1),
                 boxShadow: [
                   BoxShadow(
-                    color: AppTheme.primaryCyan.withOpacity(0.3),
+                    color: AppTheme.primarySaffron.withOpacity(0.3),
                     blurRadius: 10,
                     spreadRadius: 2,
                   ),
@@ -303,7 +303,7 @@ class _LiveActionStoryScreenState extends State<LiveActionStoryScreen>
               ),
               child: const Icon(
                 Icons.arrow_back,
-                color: AppTheme.primaryCyan,
+                color: AppTheme.primarySaffron,
                 size: 24,
               ),
             ),
@@ -316,7 +316,7 @@ class _LiveActionStoryScreenState extends State<LiveActionStoryScreen>
                 Text(
                   chapter.title.toUpperCase(),
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: AppTheme.primaryCyan,
+                        color: AppTheme.primarySaffron,
                         letterSpacing: 2,
                       ),
                 ),
@@ -335,13 +335,13 @@ class _LiveActionStoryScreenState extends State<LiveActionStoryScreen>
             child: Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppTheme.primaryPurple.withOpacity(0.2),
+                color: AppTheme.secondaryNavy.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppTheme.primaryPurple, width: 1),
+                border: Border.all(color: AppTheme.secondaryNavy, width: 1),
               ),
               child: const Icon(
                 Icons.movie,
-                color: AppTheme.primaryPurple,
+                color: AppTheme.secondaryNavy,
                 size: 24,
               ),
             ),
@@ -359,7 +359,7 @@ class _LiveActionStoryScreenState extends State<LiveActionStoryScreen>
           LinearProgressIndicator(
             value: (currentSceneIndex + 1) / chapter.scenes.length,
             backgroundColor: AppTheme.gridLine,
-            valueColor: const AlwaysStoppedAnimation<Color>(AppTheme.primaryCyan),
+            valueColor: const AlwaysStoppedAnimation<Color>(AppTheme.primarySaffron),
           ),
           const SizedBox(height: 8),
           Text(
@@ -400,7 +400,7 @@ class _LiveActionStoryScreenState extends State<LiveActionStoryScreen>
         child: Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: AppTheme.surfaceDark.withOpacity(0.9),
+            color: AppTheme.surfaceWhite.withOpacity(0.9),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: _getCharacterColor(currentDialogue.speaker),
