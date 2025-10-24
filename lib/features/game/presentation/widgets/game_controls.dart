@@ -58,10 +58,10 @@ class GameControls extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
           color: isEnabled ? AppTheme.surfaceWhite : AppTheme.surfaceLightGrey,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color: isEnabled ? buttonColor : AppTheme.gridLine,
             width: 1.5,
@@ -73,13 +73,13 @@ class GameControls extends StatelessWidget {
             Icon(
               icon,
               color: isEnabled ? buttonColor : AppTheme.gridLine,
-              size: 24,
+              size: 20,
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 2),
             Text(
               label,
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 10,
                 fontWeight: FontWeight.bold,
                 color: isEnabled ? buttonColor : AppTheme.gridLine,
               ),

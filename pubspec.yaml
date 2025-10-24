@@ -1,7 +1,7 @@
 name: sudoku
 description: Proudly Indian Logic Game - Sudoku by Perfeasy
 publish_to: 'none'
-version: 1.0.0+1
+version: 0.0.4+4
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -16,6 +16,9 @@ dependencies:
   
   # State Management  
   provider: ^6.1.1
+  
+  # AdMob Integration
+  google_mobile_ads: ^3.0.0
   
   # Local Storage
   shared_preferences: ^2.2.2

@@ -6,6 +6,8 @@ import '../../domain/entities/puzzle.dart';
 import '../widgets/sudoku_grid.dart';
 import '../widgets/number_pad.dart';
 import '../widgets/game_controls.dart';
+import '../../../../shared/widgets/banner_ad_widget.dart';
+import '../../../../core/services/interstitial_ad_service.dart';
 
 class GameScreen extends StatefulWidget {
   final Difficulty difficulty;
@@ -156,6 +158,8 @@ class _GameScreenState extends State<GameScreen> {
     if (gridFilled && allCorrect) {
       isComplete = true;
       _showCompletionDialog();
+      // Show interstitial ad on game completion
+      InterstitialAdService.showInterstitialAd();
     }
   }
 
@@ -254,9 +258,15 @@ class _GameScreenState extends State<GameScreen> {
       body: SafeArea(
         child: Column(
           children: [
+            // Top Banner Ad
+            const BannerAdWidget(
+              height: 40,
+              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+            ),
+            
             // Stats bar
             Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -271,6 +281,7 @@ class _GameScreenState extends State<GameScreen> {
             // Sudoku Grid
             Expanded(
               child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: Center(
                   child: SudokuGrid(
                     currentGrid: currentGrid,
@@ -285,20 +296,28 @@ class _GameScreenState extends State<GameScreen> {
             ),
             
             // Game Controls
-            GameControls(
-              onUndo: moveHistory.isNotEmpty ? _onUndo : null,
-              onHint: _onHint,
-              onClear: (selectedRow != null && selectedCol != null) ? _onClearCell : null,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: GameControls(
+                onUndo: moveHistory.isNotEmpty ? _onUndo : null,
+                onHint: _onHint,
+                onClear: (selectedRow != null && selectedCol != null) ? _onClearCell : null,
+              ),
             ),
-            
-            const SizedBox(height: 8),
             
             // Number Pad
-            NumberPad(
-              onNumberSelected: (selectedRow != null && selectedCol != null) ? _onNumberSelected : null,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: NumberPad(
+                onNumberSelected: (selectedRow != null && selectedCol != null) ? _onNumberSelected : null,
+              ),
             ),
             
-            const SizedBox(height: 16),
+            // Bottom Banner Ad
+            const BannerAdWidget(
+              height: 40,
+              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+            ),
           ],
         ),
       ),

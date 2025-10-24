@@ -5,6 +5,7 @@ import '../../../../core/theme/app_theme.dart';
 import '../../../game/data/services/sudoku_generator.dart';
 import '../../../game/presentation/screens/game_screen.dart';
 import '../../../story/presentation/screens/live_action_story_screen.dart';
+import '../../../../shared/widgets/banner_ad_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -181,6 +182,15 @@ class HomeScreen extends StatelessWidget {
                   onTap: () {
                     _showDifficultySelection(context);
                   },
+                ),
+                
+                // Banner Ad
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16),
+                  child: BannerAdWidget(
+                    height: 50,
+                    margin: EdgeInsets.symmetric(horizontal: 16),
+                  ),
                 ),
                 
                 // Footer with Indian Pride
