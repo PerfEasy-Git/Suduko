@@ -16,6 +16,12 @@ void main() async {
     DeviceOrientation.portraitUp,
   ]);
   
+  // Enable edge-to-edge for Android 15 compatibility
+  SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.edgeToEdge,
+    overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom],
+  );
+  
   // Initialize AdMob
   await AdService.initialize();
   
