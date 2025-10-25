@@ -65,3 +65,5 @@ Get a URL like: `https://YOUR-USERNAME.github.io/sudoku-privacy-policy/PRIVACY_P
 ---
 
 **Done!** 🎉 Now you can submit your app to Google Play! 🚀
+
+

@@ -1,7 +1,7 @@
 name: sudoku
 description: Proudly Indian Logic Game - Sudoku by Perfeasy
 publish_to: 'none'
-version: 0.0.4+4
+version: 0.1.1+36
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
